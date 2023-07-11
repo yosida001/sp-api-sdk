@@ -505,6 +505,8 @@ final class FeedsSDK implements FeedsSDKInterface
      */
     public function createFeedDocumentRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body) : RequestInterface
     {
+        $region = "us-east-1";
+
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {
             throw new InvalidArgumentException(
