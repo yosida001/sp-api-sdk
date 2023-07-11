@@ -540,7 +540,7 @@ final class FeedsSDK implements FeedsSDKInterface
 
         $request = $this->httpFactory->createRequest(
             'POST',
-            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
+            $this->configuration->apiURL("us-east-1") . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
