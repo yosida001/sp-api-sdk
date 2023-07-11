@@ -526,21 +526,21 @@ final class FeedsSDK implements FeedsSDKInterface
         if ($multipart) {
             $headers = [
                 'accept' => ['application/json'],
-                'host' => [$this->configuration->apiHost("us-east-1")],
+                'host' => [$this->configuration->apiHost($region)],
                 'user-agent' => [$this->configuration->userAgent()],
             ];
         } else {
             $headers = [
                 'content-type' => ['application/json'],
                 'accept' => ['application/json'],
-                'host' => [$this->configuration->apiHost("us-east-1")],
+                'host' => [$this->configuration->apiHost($region)],
                 'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
         $request = $this->httpFactory->createRequest(
             'POST',
-            $this->configuration->apiURL("us-east-1") . $resourcePath . '?' . $query
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
